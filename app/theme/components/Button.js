@@ -314,7 +314,7 @@ export default (variables /* : * */ = variable) => {
       marginRight: 0,
       color: variables.inverseTextColor,
       fontSize: variables.buttonTextSize,
-      paddingHorizontal: 16,
+      paddingHorizontal: 10,
       backgroundColor: 'transparent'
     },
 
@@ -337,7 +337,7 @@ export default (variables /* : * */ = variable) => {
       },
       'NativeBase.IconNB': {
         marginRight: 0,
-        marginLeft: 16
+        marginLeft: 10
       },
       'NativeBase.Icon': {
         marginRight: 0,
@@ -360,7 +360,7 @@ export default (variables /* : * */ = variable) => {
     '.picker': {
       'NativeBase.Text': {
         '.note': {
-          fontSize: 16,
+          fontSize: 15,
           lineHeight: null
         }
       }

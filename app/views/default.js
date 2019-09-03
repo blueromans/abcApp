@@ -2,16 +2,19 @@ import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 
 import {Badge, Button, Container, Content, Text} from 'native-base';
-import {DetailsHeader} from '../components';
+import {DetailsHeader, Tags} from '../components';
 import styles from '../styles/index.styles';
 
 class DefaultPage extends Component {
-
+    state={
+        tags:['#sample tag 2','#sample tag 3','#oldhome']
+    }
     constructor(props) {
         super(props);
     }
 
     render() {
+        const {tags} = this.state;
         return (
             <Container>
                 <DetailsHeader/>
@@ -25,15 +28,15 @@ class DefaultPage extends Component {
                         justifyContent: 'space-evenly',
                     }}>
                         <Button iconLeft primary transparent>
-                            <Image style={styles.image} source={require('../assets/icons/call.png')}/>
+                            <Image style={{width:26,height:26}} source={require('../assets/icons/call.png')}/>
                             <Text>Call</Text>
                         </Button>
                         <Button iconLeft primary transparent>
-                            <Image style={styles.image} source={require('../assets/icons/chat.png')}/>
+                            <Image style={{width:26,height:26}} source={require('../assets/icons/chat.png')}/>
                             <Text>Message</Text>
                         </Button>
                         <Button iconLeft primary transparent>
-                            <Image style={styles.image} source={require('../assets/icons/email.png')}/>
+                            <Image style={{width:26,height:26}} source={require('../assets/icons/email.png')}/>
                             <Text>E-mail</Text>
                         </Button>
                     </View>
@@ -50,10 +53,11 @@ class DefaultPage extends Component {
                         <Image source={require('../assets/images/avatar.png')}/>
                         <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
                             <View style={{
+                                flex:1,
                                 flexDirection: 'row',
-                                paddingHorizontal: 10,
-                                justifyContent: 'center',
-                                alignItems: 'center',
+                                paddingLeft:10,
+                                marginVertical:5
+
                             }}>
                                 <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
                                     <Text>25</Text>
@@ -71,23 +75,19 @@ class DefaultPage extends Component {
                             <View style={{
                                 flexDirection: 'row',
                                 flex: 1,
-                                paddingHorizontal: 10,
-                                marginTop: 10,
-                                justifyContent: 'center',
-                                alignItems: 'center',
+                                paddingLeft:10,
+                                marginVertical: 5,
+                                marginLeft:10,
                             }}>
-                                <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
-                                    <Button style={{height: 27}} bordered>
+                                    <Button block style={{height: 27,flex:.9,marginRight:3}} bordered>
                                         <Text style={{fontSize: 12}}>Add Showing</Text>
                                     </Button>
-                                </View>
-                                <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
-                                    <Button style={{height: 27, justifyContent: 'center', alignItems: 'center'}} badge>
+
+                                    <Button block style={{height: 27,flex:.9,marginLeft:3}} badge>
                                         <Badge style={{position: 'absolute', top: -5, right: -5}}><Text
                                             style={{fontSize: 12}}>9</Text></Badge>
                                         <Text style={{fontSize: 12}}>Show Matchings</Text>
                                     </Button>
-                                </View>
                             </View>
                         </View>
                     </View>
@@ -128,6 +128,9 @@ class DefaultPage extends Component {
                         <Button primary transparent>
                             <Text style={{fontSize: 12}}>Show More Details</Text>
                         </Button>
+                    </View>
+                    <View style={{padding:10}}>
+                        <Tags initialTags={tags}/>
                     </View>
                 </Content>
             </Container>

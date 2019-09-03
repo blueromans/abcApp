@@ -92,9 +92,7 @@ export default {
     return this.inverseTextColor;
   },
   get buttonTextSize() {
-    return platform === PLATFORM.IOS
-      ? this.fontSizeBase * 1.1
-      : this.fontSizeBase - 1;
+    return this.fontSizeBase;
   },
   get buttonTextSizeLarge() {
     return this.fontSizeBase * 1.5;
