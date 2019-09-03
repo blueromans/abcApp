@@ -46,7 +46,7 @@ export default {
   androidRipple: false,
   androidRippleColor: 'rgba(256, 256, 256, 0.3)',
   androidRippleColorDark: 'rgba(0, 0, 0, 0.15)',
-  buttonUppercaseAndroidText: true,
+  buttonUppercaseAndroidText: false,
 
   // Badge
   badgeBg: '#ED1727',
@@ -59,7 +59,7 @@ export default {
   buttonPadding: 6,
   buttonDefaultActiveOpacity: 0.5,
   buttonDefaultFlex: 1,
-  buttonDefaultBorderRadius: 2,
+  buttonDefaultBorderRadius: 5,
   buttonDefaultBorderWidth: 1,
   get buttonPrimaryBg() {
     return this.brandPrimary;
@@ -133,12 +133,12 @@ export default {
   checkboxTextShadowRadius: 0,
 
   // Color
-  brandPrimary: platform === PLATFORM.IOS ? '#007aff' : '#3F51B5',
+  brandPrimary: '#4A90E2',
   brandInfo: '#62B1F6',
-  brandSuccess: '#5cb85c',
-  brandDanger: '#d9534f',
-  brandWarning: '#f0ad4e',
-  brandDark: '#000',
+  brandSuccess: '#6fb80c',
+  brandDanger: '#FF3B30',
+  brandWarning: '#f08104',
+  brandDark: '#4A4A4A',
   brandLight: '#f4f4f4',
 
   // Container
@@ -303,10 +303,10 @@ export default {
   titleFontSize: platform === PLATFORM.IOS ? 17 : 19,
   subTitleFontSize: platform === PLATFORM.IOS ? 11 : 14,
   subtitleColor: platform === PLATFORM.IOS ? '#8e8e93' : '#FFF',
-  titleFontColor: platform === PLATFORM.IOS ? '#000' : '#FFF',
+  titleFontColor: '#4A4A4A',
 
   // Other
-  borderRadiusBase: platform === PLATFORM.IOS ? 5 : 2,
+  borderRadiusBase: 5,
   borderWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
   contentPadding: 10,
   dropdownLinkColor: '#414142',
