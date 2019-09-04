@@ -55,7 +55,7 @@ export default {
 
   // Button
   buttonFontFamily: platform === PLATFORM.IOS ? 'System' : 'Roboto_medium',
-  buttonDisabledBg: '#b5b5b5',
+  buttonDisabledBg: '#9B9B9B',
   buttonPadding: 6,
   buttonDefaultActiveOpacity: 0.5,
   buttonDefaultFlex: 1,
