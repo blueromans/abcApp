@@ -18,7 +18,6 @@ const TabBar = (props) => {
     return (
         <View style={{
             flexDirection: "row",
-            flex:1,
             justifyContent: 'space-around',
             alignItems: 'center',
             borderBottomColor:'#d6d6d6',

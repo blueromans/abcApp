@@ -144,7 +144,7 @@ class DefaultPage extends Component {
                     <View>
                         <DetailSlider showPosition={true} badgeStyle={{backgroundColor:'#F5A623'}} badgeTitle='Fair Priced' slides={slides}/>
                     </View>
-                    <View>
+                    <View style={{flex:1}}>
                         <DetailTabs/>
                     </View>
                 </Content>
