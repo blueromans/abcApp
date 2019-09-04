@@ -3,7 +3,6 @@ import {FlatList, View, Dimensions, TouchableOpacity, Platform, Image,I18nManage
 import {Button,Text} from 'native-base';
 
 const { width, height } = Dimensions.get('window');
-const isIphoneX = Platform.OS === 'ios' && !Platform.isPad && !Platform.isTVOS && (height === 812 || width === 812);
 const isAndroidRTL = I18nManager.isRTL && Platform.OS === 'android';
 
 
@@ -187,7 +186,7 @@ const styles = {
     },
     paginationContainer: {
         position: 'absolute',
-        bottom: isIphoneX ? 34 : 0,
+        bottom: 0,
         left: 16,
         right: 16,
     },
@@ -210,7 +209,7 @@ const styles = {
     },
     locationContainer:{
         position: 'absolute',
-        bottom: 5 + (isIphoneX ? 34 : 0),
+        bottom: 5,
         justifyContent:'center',
         alignItems:'center',
         left: 0,
