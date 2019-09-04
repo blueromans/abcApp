@@ -6,7 +6,7 @@ import platform from './app/theme/variables/platform';
 import DefaultStack from './app/router';
 
 const AppContainer = createAppContainer(DefaultStack);
-
+console.disableYellowBox = true;
 class App extends Component {
   constructor(properties) {
     super(properties);
