@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import { View } from "react-native";
 import {Button,Text} from "native-base";
@@ -12,7 +12,7 @@ const Tag = ({ label, tagContainerStyle, tagTextStyle }) => {
     );
 };
 
-export class Tags extends React.Component {
+export class Tags extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,24 +30,11 @@ export class Tags extends React.Component {
 
 
     render() {
-        const {
-            containerStyle,
-            style,
-            tagContainerStyle,
-            tagTextStyle,
-            renderTag
-        } = this.props;
-
+        const {containerStyle, style, tagContainerStyle, tagTextStyle, renderTag} = this.props;
         return (
             <View style={[styles.tags.container, containerStyle, style]}>
                 {this.state.tags.map((tag, index) => {
-                    const tagProps = {
-                        tag,
-                        index,
-                        tagContainerStyle,
-                        tagTextStyle
-                    };
-
+                    const tagProps = {tag, index, tagContainerStyle, tagTextStyle};
                     return renderTag(tagProps);
                 })}
                 <Button primary transparent>

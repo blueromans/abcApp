@@ -2,19 +2,27 @@ import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 
 import {Badge, Button, Container, Content, Text} from 'native-base';
-import {DetailsHeader, Tags} from '../components';
+import {DetailsHeader, Tags,DetailSlider} from '../components';
 import styles from '../styles/index.styles';
 
 class DefaultPage extends Component {
-    state={
-        tags:['#sample tag 2','#sample tag 3','#oldhome']
-    }
+    state = {
+        tags: ['#sample tag 2', '#sample tag 3', '#oldhome'],
+        slides: [
+            {image: require('../assets/images/detail.png')},
+            {image: require('../assets/images/detail.png')},
+            {image: require('../assets/images/detail.png')},
+            {image: require('../assets/images/detail.png')},
+            {image: require('../assets/images/detail.png')},
+        ]
+    };
+
     constructor(props) {
         super(props);
     }
 
     render() {
-        const {tags} = this.state;
+        const {tags,slides} = this.state;
         return (
             <Container>
                 <DetailsHeader/>
@@ -28,15 +36,15 @@ class DefaultPage extends Component {
                         justifyContent: 'space-evenly',
                     }}>
                         <Button iconLeft primary transparent>
-                            <Image style={{width:26,height:26}} source={require('../assets/icons/call.png')}/>
+                            <Image style={{width: 26, height: 26}} source={require('../assets/icons/call.png')}/>
                             <Text>Call</Text>
                         </Button>
                         <Button iconLeft primary transparent>
-                            <Image style={{width:26,height:26}} source={require('../assets/icons/chat.png')}/>
+                            <Image style={{width: 26, height: 26}} source={require('../assets/icons/chat.png')}/>
                             <Text>Message</Text>
                         </Button>
                         <Button iconLeft primary transparent>
-                            <Image style={{width:26,height:26}} source={require('../assets/icons/email.png')}/>
+                            <Image style={{width: 26, height: 26}} source={require('../assets/icons/email.png')}/>
                             <Text>E-mail</Text>
                         </Button>
                     </View>
@@ -53,10 +61,10 @@ class DefaultPage extends Component {
                         <Image source={require('../assets/images/avatar.png')}/>
                         <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
                             <View style={{
-                                flex:1,
+                                flex: 1,
                                 flexDirection: 'row',
-                                paddingLeft:10,
-                                marginVertical:5
+                                paddingLeft: 10,
+                                marginVertical: 5,
 
                             }}>
                                 <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
@@ -75,19 +83,19 @@ class DefaultPage extends Component {
                             <View style={{
                                 flexDirection: 'row',
                                 flex: 1,
-                                paddingLeft:10,
+                                paddingLeft: 10,
                                 marginVertical: 5,
-                                marginLeft:10,
+                                marginLeft: 10,
                             }}>
-                                    <Button block style={{height: 27,flex:.9,marginRight:3}} bordered>
-                                        <Text style={{fontSize: 12}}>Add Showing</Text>
-                                    </Button>
+                                <Button block style={{height: 27, flex: .9, marginRight: 3}} bordered>
+                                    <Text style={{fontSize: 12}}>Add Showing</Text>
+                                </Button>
 
-                                    <Button block style={{height: 27,flex:.9,marginLeft:3}} badge>
-                                        <Badge style={{position: 'absolute', top: -5, right: -5}}><Text
-                                            style={{fontSize: 12}}>9</Text></Badge>
-                                        <Text style={{fontSize: 12}}>Show Matchings</Text>
-                                    </Button>
+                                <Button block style={{height: 27, flex: .9, marginLeft: 3}} badge>
+                                    <Badge style={{position: 'absolute', top: -5, right: -5}}><Text
+                                        style={{fontSize: 12}}>9</Text></Badge>
+                                    <Text style={{fontSize: 12}}>Show Matchings</Text>
+                                </Button>
                             </View>
                         </View>
                     </View>
@@ -129,8 +137,11 @@ class DefaultPage extends Component {
                             <Text style={{fontSize: 12}}>Show More Details</Text>
                         </Button>
                     </View>
-                    <View style={{padding:10}}>
+                    <View style={{padding: 10}}>
                         <Tags initialTags={tags}/>
+                    </View>
+                    <View>
+                        <DetailSlider showPosition={true} badgeStyle={{backgroundColor:'#F5A623'}} badgeTitle='Fair Priced' slides={slides}/>
                     </View>
                 </Content>
             </Container>
