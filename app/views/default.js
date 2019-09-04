@@ -8,6 +8,7 @@ import DetailTabs from '../detailstab';
 
 class DefaultPage extends Component {
     state = {
+        showMore: false,
         tags: ['#sample tag 2', '#sample tag 3', '#oldhome'],
         slides: [
             {image: require('../assets/images/detail.png')},
@@ -20,10 +21,13 @@ class DefaultPage extends Component {
 
     constructor(props) {
         super(props);
-    }
 
+    }
+    changeLayout = () => {
+        this.setState({ showMore: !this.state.showMore });
+    }
     render() {
-        const {tags,slides} = this.state;
+        const {tags,slides,showMore} = this.state;
         return (
             <Container>
                 <DetailsHeader/>
@@ -128,16 +132,91 @@ class DefaultPage extends Component {
                         <Text style={{fontSize: 13, color: '#4A4A4A'}}>Room | SurfaceArea | Bahtroom |
                             SelectedAnqituity </Text>
                     </View>
+                    <View style={{ height: showMore ? null : 0, paddingHorizontal:20, overflow: 'hidden' }}>
+                        <View style={{flex:1}}>
+                            <Button transparent full>
+                                <Text style={{fontSize:12}}>Edit Property Details</Text>
+                            </Button>
+                        </View>
+                        <View style={{padding:20,flexDirection:'row',flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <View style={{flex:3,marginVertical:10,paddingHorizontal:20}}>
+                                <View style={{alignItems:'center'}}>
+                                    <Text>3</Text>
+                                    <Text style={{textAlign:'center'}}>Parking Lot</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:3,marginVertical:10,paddingHorizontal:20}}>
+                                <View style={{alignItems:'center'}}>
+                                    <Text>2</Text>
+                                    <Text style={{textAlign:'center'}}>WC Number</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={{padding:20,flexDirection:'row',flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <View style={{flex:3,marginVertical:10,paddingHorizontal:20}}>
+                                <View style={{alignItems:'center'}}>
+                                    <Text>1</Text>
+                                    <Text style={{textAlign:'center'}}>Property Floor</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:3,marginVertical:10,paddingHorizontal:20}}>
+                                <View style={{alignItems:'center'}}>
+                                    <Text>2</Text>
+                                    <Text style={{textAlign:'center'}}>Total Building Floor</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Heating: Heating Option</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>In Sıte: Yes | No</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Furnished: Yes | No</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Loan Status: Yes | No</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Min Carpet Area: MinCarpetArea</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>View Side: Selection1, Selection2...</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Max Maintenance Fee: XYZ Currency</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Swap Status: Yes | No</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Using Status: Selection</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Description</Text>
+                            <View style={{height:100}}>
+
+                            </View>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Indoor Features: [Selected Feature Name]</Text>
+                        </View>
+                        <View style={{paddingVertical:10,flex:1,borderBottomColor:'#d1d1d1',borderBottomWidth:.4}}>
+                            <Text style={{fontSize:14}}>Outdoor Features: [Selected Feature Name]</Text>
+                        </View>
+                    </View>
                     <View style={{
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderBottomWidth: 1,
                         borderBottomColor: '#AFAFAF',
                     }}>
-                        <Button primary transparent>
-                            <Text style={{fontSize: 12}}>Show More Details</Text>
+                        <Button primary transparent  onPress={()=>{this.changeLayout()}}>
+                            <Text style={{fontSize: 12}}>{showMore ? 'Show Less Details':'Show More Details'}</Text>
                         </Button>
                     </View>
+
                     <View style={{padding: 10}}>
                         <Tags initialTags={tags}/>
                     </View>
