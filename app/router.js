@@ -1,7 +1,7 @@
 import React from 'react';
 import {Animated, Easing} from 'react-native';
-import DefaultPage from './views/default';
 import { createStackNavigator } from 'react-navigation-stack';
+import DefaultPage from './views/default';
 
 const DefaultStack = createStackNavigator({
     Default: DefaultPage,
@@ -40,5 +40,5 @@ const transitionConfig = () => {
         },
     };
 };
-export default DefaultStack;
 
+export default DefaultStack;

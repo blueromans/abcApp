@@ -4,6 +4,7 @@ import {Image, View} from 'react-native';
 import {Badge, Button, Container, Content, Text} from 'native-base';
 import {DetailsHeader, Tags,DetailSlider} from '../components';
 import styles from '../styles/index.styles';
+import DetailTabs from '../detailstab';
 
 class DefaultPage extends Component {
     state = {
@@ -142,6 +143,9 @@ class DefaultPage extends Component {
                     </View>
                     <View>
                         <DetailSlider showPosition={true} badgeStyle={{backgroundColor:'#F5A623'}} badgeTitle='Fair Priced' slides={slides}/>
+                    </View>
+                    <View>
+                        <DetailTabs/>
                     </View>
                 </Content>
             </Container>
