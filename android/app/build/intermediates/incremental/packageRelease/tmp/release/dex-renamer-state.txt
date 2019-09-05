@@ -1,0 +1,4 @@
+#Thu Sep 05 11:12:27 EET 2019
+base.0=/Users/n2software/backup/Documents/cross/abcApp/android/app/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex
