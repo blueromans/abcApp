@@ -1,4 +1,4 @@
-# ABC App from Figma
+# ABC App
 
 Abc app is a react native project for design and code challenge.
 
