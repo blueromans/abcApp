@@ -24,7 +24,7 @@ npm install
 ```bash
 react-native run-android/run-ios
 ```
-## Screenshots
+## Screenshots for android
 
 ![Screenshot](https://github.com/blueromans/abcApp/blob/master/android/screenshot1.png)
 ![Screenshot](https://github.com/blueromans/abcApp/blob/master/android/screenshot2.png)
